@@ -6,7 +6,6 @@ public interface SupportRequest {
 	public String getTitle();
 	public int getBasePoints();
 	public boolean isResolved();
-	public void resolve();
 	public int resolveFor(Technician technician);
 		
 }
