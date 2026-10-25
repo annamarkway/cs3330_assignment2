@@ -74,6 +74,14 @@ public class Main {
         int pts3 = helpDesk.resolveRequest(tech2, 301); 
         System.out.println("Resolved Request 301 for Arjun Garikapaty. Points awarded: " + pts3);
         System.out.println();
+        
+        int expectedPts = 30 + 25;
+        if (pts3 == expectedPts) {
+            System.out.println("Linear rule passed");
+        } else {
+            System.out.println("Linear rule failed! Expected:" + expectedPts + " points, but got " + pts3);
+        }
+        System.out.println();
 
         System.out.println("6. ALL REQUESTS AFTER RESOLUTION ");
         helpDesk.printAllRequests();
