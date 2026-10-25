@@ -23,6 +23,10 @@ public abstract class AbstractSupportRequest implements SupportRequest {
 		return resolved;
 	}
 	
+	public int getAwardedPoints() {
+		return getBasePoints();
+	}
+	
 	public String toString() {
 		return String.format("Request %d, %s. Base points: %d. Resolved: %s", id, title, basePoints, resolved);
 	}
@@ -50,8 +54,8 @@ public abstract class AbstractSupportRequest implements SupportRequest {
 			throw new IllegalStateException("Could not resolve: request has already been resolved.");
 		}
 		this.resolved = true;
-		technician.addPoints(getBasePoints());
-		return getBasePoints();
+		technician.addPoints(getAwardedPoints());
+		return getAwardedPoints();
 	}
 	
 }
